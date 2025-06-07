@@ -125,5 +125,12 @@ export default [
 
 ## Dependencies
 ```
-npm install --save-dev eslint @eslint/js eslint-plugin-jest eslint-plugin-node eslint-plugin-promise eslint-plugin-security globals
+npm install --save-dev \
+@eslint/js@^9.28.0 \
+@eslint/json@^0.12.0 \
+eslint@^9.28.0 \
+eslint-plugin-node@^11.1.0 \
+eslint-plugin-promise@^7.2.1 \
+eslint-plugin-security@^3.0.1 \
+globals@^16.2.0
 ```
