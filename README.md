@@ -1,4 +1,4 @@
-# Basic ESLint config file
+# Basic ESLint eslint.config.js file
 
 ```javascript
 import globals from 'globals';
