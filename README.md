@@ -3,10 +3,10 @@
 ```javascript
 import globals from 'globals';
 import pluginJs from '@eslint/js';
-import jestPlugin from 'eslint-plugin-jest';
-import nodePlugin from 'eslint-plugin-node';
+import pluginNode from 'eslint-plugin-node';
 import pluginPromise from 'eslint-plugin-promise';
 import pluginSecurity from 'eslint-plugin-security';
+import pluginJson from '@eslint/json';
 
 export default [
     {
@@ -22,8 +22,7 @@ export default [
     // Register plugins for Jest and Node.js rules
     { 
         plugins: { 
-            jest: jestPlugin,  // Enables Jest-specific linting rules
-            node: nodePlugin   // Enables Node.js-specific linting rules
+            node: pluginNode   // Enables Node.js-specific linting rules
         } 
     },
     
@@ -119,7 +118,15 @@ export default [
     pluginPromise.configs['flat/recommended'],
 
     // Extend security-related rules to prevent common security issues
-    pluginSecurity.configs.recommended
+    pluginSecurity.configs.recommended,
+
+    // Configuration for JSON files
+    {
+        files: ['**/*.json'],
+        plugins: { json: pluginJson },
+        language: 'json/json',
+        extends: ['json/recommended']
+    }
 ];
 ```
 
